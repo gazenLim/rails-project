@@ -1,0 +1,16 @@
+<h1>Users</h1>
+
+
+
+<% @users.each do |t| %>
+User Name: <%=link_to t.user_name, user_inventories_path(t) %> <br>
+Total Inventory: <%= t.number_of_orders %> <br>
+Total Amount: <%= t.inventories.sum('amount') %>
+<br><br>
+<br>
+
+
+
+
+<% end %>
+

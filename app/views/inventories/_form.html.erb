@@ -1,0 +1,27 @@
+<%= render partial: '/errors/errors', locals: {obj: @inventory}%>
+
+<div id = "container">
+
+<%= form_with model: [user , inventory] do |f| %>
+<ul>
+<li>
+<%= f.label :product_name %>
+<%= f.collection_select :product_id, Product.all, :id, :product_name %><br>
+</li>
+<li>
+<%= f.label :amount %>
+<%= f.text_field :amount %><br>
+</li>
+<li>
+<%= f.label :delivery %>
+<%= f.date_field :delivery %><br>
+</li>
+
+<li><br><br>
+<%= f.submit "submit" %><br>
+</li>
+
+<% end %>
+</li>
+</ul>
+</div>

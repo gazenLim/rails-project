@@ -1,0 +1,22 @@
+
+
+
+<% if @user %><br>
+<h1><%= @user.user_name%>'s Order<br></h1>
+<% else %>
+<h1>All Inventories</h1>
+<% end %>
+
+
+
+<% @inventories.each do |t| %>
+
+
+<% if @user %>
+Product Name: <%=link_to t.product.product_name, user_inventory_path(@user, t)%>  <br>
+<% else %>
+Product Name: <%=link_to t.product.product_name, inventory_path(t)  %><br> 
+<% end %>
+Amount: <%= t.amount %> <br>
+Delivery Date: <%= t.delivery_time_formate %><br> <br>
+<% end %>

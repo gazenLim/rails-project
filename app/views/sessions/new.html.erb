@@ -1,0 +1,16 @@
+<div>
+
+
+<h1>Login</h1>
+    <%= button_to 'Google', '/auth/google_oauth2' %>
+
+<%= form_with  url: '/login', local: true do |t| %>
+
+<%= t.label :username %>
+<%= t.text_field :username %><br>
+
+<%= t.label :password %>
+<%= t.password_field :password %><br>
+<%= t.submit "Login"%>
+<% end %>
+</div>

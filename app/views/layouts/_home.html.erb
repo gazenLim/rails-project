@@ -1,0 +1,15 @@
+
+<% if logged_in? %>
+
+
+
+<%= link_to "Home", users_path %> | 
+<%= link_to "Add New Inventory", new_user_inventory_path(current_user)	 %> | 
+<%= link_to "All Inventory", inventories_path %> | 
+<%= link_to "All Products", products_path %> | 
+<%= link_to "#{@current_user.name} Order's", user_inventories_path(current_user)	 %> | 
+<%= link_to "Total Sale", totalsale_path	 %> | 
+
+<hr>
+
+<% end %>

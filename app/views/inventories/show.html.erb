@@ -1,0 +1,19 @@
+<h1> Order's Details</h1>
+
+
+
+Product Name: <%= @inventory.product.product_name %><br>
+Amount: <%= @inventory.amount %><br>
+Order Date: <%= @inventory.created_time %><br>  
+Delivery Date: <%= @inventory.delivery_time_formate %><br>
+
+<h4>Product Descritpion:</h4> <%= @inventory.product.product_description %><br>
+
+
+
+<br><br><br><br>
+<%= link_to "Edit" , edit_user_inventory_path(current_user, @inventory)	 %> |
+<%= link_to "Delete", user_inventory_path(current_user, @inventory), method: 'delete',data: { confirm: 'Are you sure?' }  %>
+
+
+
